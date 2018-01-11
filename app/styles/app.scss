@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Almendra');
+$theme-path: "/assets/images/splittermond-tickleiste-theme/";
+
+.background{
+  width: 100vw;
+  height: 100vh;
+  background-image: url($theme-path+"background.jpg");
+  background-color: #bbdff2;
+  background-blend-mode: lighten;
+  display: flex;
+  position: relative;
+
+  &:after {
+    z-index: 1;
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    mix-blend-mode: color-burn;
+    box-shadow: inset 0 0 100px 80px rgba(50, 75, 150, 0.9),inset 0 0 100px 100px rgba(105, 193, 227, 1);
+  }
+}
+
+.container {
+  z-index: 2;
+  flex: 1;
+  background: transparent;
+  margin: 0;
+  padding: 50px 15px;
+  border-style: solid;
+  border-width: 50px;
+  border-image: url($theme-path+"border.png") 150 round;
+  box-sizing: border-box;
+  font-family: 'Alegreya', serif;
+
+  h1 {
+    font-family: 'Almendra', serif;
+    color: #25408f;
+    text-align: center;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+@import "ember-bootstrap/bootstrap";
