@@ -1,1 +1,46 @@
 {{outlet}}
+<div class="row">
+  <div class="col-md-offset-1 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <form>
+          <div class="input-group input-group--2-button">
+            {{input type="text" class="form-control" placeholder="Name"
+value=name}} {{input type="text" class="form-control" placeholder="Tick"
+value=tick}}
+            <div class="input-group-btn">
+              <button class="btn btn-default" {{action "addParticipant"}} type="button">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="panel-body">
+        {{#bs-accordion as |acc|}}
+          {{#each ordered as |participant index|}}
+            {{#acc.item value=participant.id title=(concat participant.tick ':  ' participant.name)}}
+              {{gm-accordion show-tick=true participant=participant increment-tick=(action
+"incrementTick") set-tick=(action
+"setTick") set-waiting=(action
+"setWaitingVal")}}
+            {{/acc.item}}
+          {{/each}}
+        {{/bs-accordion}}
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{#bs-accordion as |acc|}}
+          {{#each participantsWaiting as |participant index|}}
+            {{#acc.item value=participant.id title=(concat participant.tick ':  ' participant.name)}}
+              {{gm-accordion participant=participant show-tick=false set-waiting=(action
+"setWaitingVal")}}
+            {{/acc.item}}
+          {{/each}}
+        {{/bs-accordion}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{{#if show-tick}}
+<div class="input-group">
+  {{input type="text" class="form-control" placeholder="Tick"
+value=incTickVal}}
+  <span class="input-group-addon" id="basic-addon2"> + </span>
+  <div class="input-group-btn">
+  <button class="btn btn-default" {{action "incrementTick"}} type="button">Go</button>
+  </div>
+</div>
+
+<div class="input-group">
+  {{input type="text" class="form-control" placeholder="Tick"
+value=setTickVal}}
+  <span class="input-group-addon" id="basic-addon2"> = </span>
+  <div class="input-group-btn">
+  <button class="btn btn-default" {{action "setTick"}} type="button">Go</button>
+  </div>
+</div>
+<button class="btn btn-default" {{action "setWaitingTrue"}} type="button">Send to Wait  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+{{/if}}
+{{#unless show-tick}}
+<div class="input-group">
+  {{input type="text" class="form-control" placeholder="Tick"
+value=setTickVal}}
+  <span class="input-group-addon" id="basic-addon2"> = </span>
+  <div class="input-group-btn">
+  <button class="btn btn-default" {{action "setWaitingFalse"}} type="button"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Send To Battle </button>
+  </div>
+</div>
+{{/unless}}

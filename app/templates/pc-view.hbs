@@ -1,1 +1,90 @@
 {{outlet}}
+<div class="row">
+  <div class="col-md-offset-1 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      <h2 class="text-center">Tickleiste</h2>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group tickleiste-pc">
+          {{#each ordered as |participant index|}}
+          <li class="list-group-item tickleiste-pc__participant">
+            <div class="tickleiste-pc__participant-tick"><span>{{participant.tick}}</span></div>
+            <div class="tickleiste-pc__participant-name">
+              <span>{{participant.name}}</span>
+            </div>
+          </li>
+          {{/each}}
+          <!-- <li class="list-group-item tickleiste-pc__participant">
+            <div class="tickleiste-pc__participant-tick"><span>42</span></div>
+            <div class="tickleiste-pc__participant-portrait"><span class="glyphicon glyphicon-user"></span></div>
+            <div class="tickleiste-pc__participant-name">
+              <span>Orc #4</span>
+            </div>
+            <div class="tickleiste-pc__participant-statuses">
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+              <div class="tickleiste-pc__participant-status">
+                {{fa-icon "hand-spock-o"}}
+                <span class="tickleiste-pc__participant-status--lvl">2</span>
+              </div>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      <h2 class="text-center">Abwarten / Bereithalten</h2>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          {{#each participantsWaiting as |participant index|}}
+          <li class="list-group-item tickleiste-pc__participant">
+            <div class="tickleiste-pc__participant-name">
+              <span>{{participant.name}}</span>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

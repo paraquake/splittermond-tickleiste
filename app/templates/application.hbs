@@ -1,7 +1,25 @@
 <div class="background">
-  <div class="container">
-    <div class="page-header">
-      <h1>Splittermond Tickleiste</h1>
+  <div class="container container--theme">
+    {{#bs-navbar type=inverse fluid=true collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+      <div class="navbar-header">
+        {{navbar.toggle}}
+      </div>
+      {{#navbar.content}}
+        {{#navbar.nav as |nav|}}
+          {{#nav.item}}
+            {{#nav.link-to "gm-view"}}GM View{{/nav.link-to}}
+          {{/nav.item}}
+          {{#nav.item}}
+            {{#nav.link-to "pc-view"}}PC View{{/nav.link-to}}
+          {{/nav.item}}
+          {{#nav.item}}
+            {{#nav.link-to "config"}}Configuration{{/nav.link-to}}
+          {{/nav.item}}
+        {{/navbar.nav}}
+      {{/navbar.content}}
+    {{/bs-navbar}}
+    <div class="container-fluid">
+      {{outlet}}
     </div>
   </div>
 </div>

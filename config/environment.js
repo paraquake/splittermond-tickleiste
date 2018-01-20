@@ -6,6 +6,9 @@ module.exports = function(environment) {
     environment: 'development',
     rootURL: '/',
     locationType: 'auto',
+    'ember-websockets': {
+      socketIO: true
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -17,8 +20,7 @@ module.exports = function(environment) {
       }
     },
 
-    APP: {
-    }
+    APP: {}
   };
 
   if (environment === 'development') {
