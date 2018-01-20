@@ -15,4 +15,9 @@ io.on('connection', function (socket) {
   //  io.sockets.emit('reloadRecords', { it: 'works' });
     socket.broadcast.emit('reloadRecords', 'hello friends!');
   });
+  socket.on('updatemodelonly', function (data) {
+    //socket.emit('reloadRecords', { hello: 'world' });
+  //  io.sockets.emit('reloadRecords', { it: 'works' });
+    socket.broadcast.emit('reloadModel', 'hello friends!');
+  });
 });

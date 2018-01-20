@@ -85,7 +85,7 @@ export default Controller.extend({
       }).then((tickleiste) => {
         tickleiste.save().then(() => {
           const socket = this.get('socketIOService').socketFor('http://localhost:7000/');
-          socket.emit('plsupdate');
+          socket.emit('updatemodelonly');
             this.get('model').reload();
         });
       });

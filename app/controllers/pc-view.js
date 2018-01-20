@@ -18,14 +18,21 @@ export default Controller.extend({
     this._super(...arguments);
     const socket = this.get('socketIOService').socketFor('http://localhost:7000/');
     socket.on('reloadRecords', this.onReloadTrigger, this);
+    socket.on('reloadModel', this.onReloadModelTrigger, this);
 
 
   },
   onReloadTrigger(data) {
-    var newModel = this.store.findRecord('tickleiste', 1, {
+  this.store.findRecord('tickleiste', 1, {
       include: 'participants',
       reload: true
     });
     this.get('model').get('participants').reload();
+  },
+  onReloadModelTrigger(data) {
+    this.store.findRecord('tickleiste', 1, {
+      reload: true
+    });
+    this.get('model').reload();
   }
 });
