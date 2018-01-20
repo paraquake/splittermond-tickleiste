@@ -32,6 +32,11 @@ export default Component.extend({
         setTickVal: this.get('setTickVal'),
         setWaitingVal: false
       });
+    },
+    removeParticipant: function() {
+      this.get('remove')({
+        participant: this.get('participant'),
+      });
     }
   }
 });

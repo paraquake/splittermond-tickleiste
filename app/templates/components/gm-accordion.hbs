@@ -7,7 +7,7 @@ value=incTickVal}}
   <button class="btn btn-default" {{action "incrementTick"}} type="button">Go</button>
   </div>
 </div>
-
+<br>
 <div class="input-group">
   {{input type="text" class="form-control" placeholder="Tick"
 value=setTickVal}}
@@ -16,6 +16,7 @@ value=setTickVal}}
   <button class="btn btn-default" {{action "setTick"}} type="button">Go</button>
   </div>
 </div>
+<br>
 <button class="btn btn-default" {{action "setWaitingTrue"}} type="button">Send to Wait  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
 {{/if}}
 {{#unless show-tick}}
@@ -28,3 +29,5 @@ value=setTickVal}}
   </div>
 </div>
 {{/unless}}
+<br>
+<button class="btn btn-danger pull-right" {{action "removeParticipant"}} type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove </button>

@@ -20,8 +20,7 @@ value=tick}}
             {{#acc.item value=participant.id title=(concat participant.tick ':  ' participant.name)}}
               {{gm-accordion show-tick=true participant=participant increment-tick=(action
 "incrementTick") set-tick=(action
-"setTick") set-waiting=(action
-"setWaitingVal")}}
+"setTick") set-waiting=(action "setWaitingVal") remove=(action "removeParticipant") }}
             {{/acc.item}}
           {{/each}}
         {{/bs-accordion}}
@@ -36,7 +35,7 @@ value=tick}}
           {{#each participantsWaiting as |participant index|}}
             {{#acc.item value=participant.id title=(concat participant.tick ':  ' participant.name)}}
               {{gm-accordion participant=participant show-tick=false set-waiting=(action
-"setWaitingVal")}}
+"setWaitingVal") remove=(action "removeParticipant")}}
             {{/acc.item}}
           {{/each}}
         {{/bs-accordion}}

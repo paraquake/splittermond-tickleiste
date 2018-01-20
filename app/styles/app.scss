@@ -74,25 +74,25 @@ html {
     flex-direction: row;
     padding: 0;
 
-    &:first-child {
+    &:not(&--wait):first-child {
       height: 100px;
       margin-bottom: 30px;
     }
 
-    &:first-child &-portrait,
-    &:first-child &-tick {
+    &:not(&--wait):first-child &-portrait,
+    &:not(&--wait):first-child &-tick {
       height: 100px;
       width: 100px;
       font-size: 46px;
     }
 
-    &:first-child &-name {
+    &:not(&--wait):first-child &-name {
       height: 100px;
       font-size: 28px;
       padding: 10px;
     }
 
-    &:first-child &-statuses {
+    &:not(&--wait):first-child &-statuses {
       height: 100px;
       font-size: 24px;
       max-width: 280px;

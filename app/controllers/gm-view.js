@@ -62,8 +62,7 @@ export default Controller.extend({
           socket.emit('plsupdate');
         });
       });
-    }
-    ,
+    },
     setWaitingVal(params) {
       params.participant.set('waiting',params.setWaitingVal);
       if(params.setTickVal){
@@ -76,6 +75,18 @@ export default Controller.extend({
         tickleiste.save().then(() => {
           const socket = this.get('socketIOService').socketFor('http://localhost:7000/');
           socket.emit('plsupdate');
+        });
+      });
+    },
+    removeParticipant(params) {
+       params.participant.destroyRecord();
+      this.get('store').findRecord('tickleiste', 1, {
+        reload: true
+      }).then((tickleiste) => {
+        tickleiste.save().then(() => {
+          const socket = this.get('socketIOService').socketFor('http://localhost:7000/');
+          socket.emit('plsupdate');
+            this.get('model').reload();
         });
       });
     }
